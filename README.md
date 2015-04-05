@@ -1,13 +1,14 @@
 ## Huemore
 
 Playing around with the Philips Hue and Sonos API.
+This is very experimental.
 
-### sinatra-speech
+### sinatra-speech.rb
 
 Only works on OS X, because it uses the build in `say` command for text2speech synthesis.
 
 Run `ruby sinatra-speech.rb` to expose a webserver that turns text into mp3.
-Thy this: [http://0.0.0.0:4567/Hello+World!.mp3](http://0.0.0.0:4567/Hello+World!.mp3).
+Thy this: [http://0.0.0.0:4567/Hello+World.mp3](http://0.0.0.0:4567/Hello+World.mp3).
 
 ### console.rb
 
@@ -20,6 +21,7 @@ You can use the above speech server to make your sonos talk:
 (assuming your mac's ip is 192.168.0.14)
 
 ```ruby
+# ruby console.rb
 speaker = @sonos.speakers.first
-speaker.voice_over! 'http://192.168.0.14:4567/Hello+World!.mp3'
+speaker.voice_over! 'http://192.168.0.14:4567/Hello+World.mp3'
 ```
